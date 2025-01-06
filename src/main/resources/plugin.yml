@@ -1,0 +1,29 @@
+name: Minigames
+author: gipper1998
+version: '1.0'
+main: me.gipper1998.minigames.Minigames
+api-version: '1.20.3'
+description: Contains all Minigames I made into one plugin for ease of use.
+commands:
+  minigames:
+    description: Minigame command for admin to reload config and messages.
+  spleef:
+    description: All Spleef commands.
+  bowspleef:
+    description: All Bow Spleef commands.
+  buildit:
+    description: All Build It commands.
+
+permissions:
+  minigames.admin:
+    description: Admin permissions
+    default: false
+  minigames.otherstats:
+    description: See other players stats
+    default: false
+  minigames.spleef.diamond:
+    description: Gives diamon shovel
+    default: false
+
+softdepend: [PlaceHolderAPI, WorldEdit, Vault]
+

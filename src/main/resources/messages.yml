@@ -1,0 +1,471 @@
+# Main Messages File that holds all the messages for the minigames.
+
+# Common Plugin section
+
+prefix: "&a&l[&d&lMinigames&a&l]&r"
+start_up: "<prefix> &aPlugin started with no problems!!!"
+shut_down: "<prefix> &cPlugin disabled "
+vault_enable: "<prefix> &bVault is enabled and hooked!"
+papi_enable: "<prefix> &dPlaceholderAPI enabled and hooked!"
+reloaded: "<prefix> &aSuccessfully reloaded!"
+no_perms: "<prefix> &cYou do not have permission to use this command."
+no_console: "<prefix> &cOnly players can access this command"
+
+# Spleef specific messages.
+spleef:
+  prefix: "&e&l[&b&lSpleef&e&l]&r"
+
+  # Modify the wizard setup messages
+  no_name_wizard: "<spleef_prefix> &cNo name was designated, please type in a name to start the wizard."
+  in_wizard: "<spleef_prefix> &aYou are now in the setup wizard, to cancel, type '&cexit_wizard&a'."
+  exit_wizard: "<spleef_prefix> &cYou have canceled the wizard, all progress has been lost."
+  wizard_minimum_chat: "<spleef_prefix> &aType in chat the minimum players can be in the arena."
+  wizard_maximum_chat: "<spleef_prefix> &aType in chat the maximum players can be in the arena."
+  wizard_name_chat: "<spleef_prefix> &aType in chat the name you want to change it to."
+  wizard_minimum_set: "<spleef_prefix> &aMinimum Set to &e<minimum>&a."
+  wizard_maximum_set: "<spleef_prefix> &aMaximum Set to &e<maximum>&a."
+  wizard_name_set: "<spleef_prefix> &aNew name set to &e<arenaname>&a."
+  wizard_arena_saved: "<spleef_prefix> &aArena saved and completed, ready to go!"
+  wizard_no_number: "<spleef_prefix> &cNo number detected, try again."
+  wizard_min_not_accepted: "<spleef_prefix> &cMinimum number doesn't work, raise the max number or try again."
+  wizard_max_not_accepted: "<spleef_prefix> &cMaximum number doesn't work, raise the min number or try again."
+  wizard_arena_spawn_set: "<spleef_prefix> &aArena Spawn Set!"
+  wizard_lobby_spawn_set: "<spleef_prefix> &aLobby Spawn Set!"
+  wizard_spectator_spawn_set: "<spleef_prefix> &aSpectator Spawn Set!"
+  wizard_exit_spawn_set: "<spleef_prefix> &aExit Spawn Set!"
+  wizard_new_name_set: "<spleef_prefix> &aName Changed!"
+  wizard_name_cannot_set: "<spleef_prefix> &aArena name found with same name!"
+  wizard_arena_no_setup_exist: "<spleef_prefix> &cThis command does not exist for setup."
+  wizard_arena_not_set: "<spleef_prefix> &cArena not set."
+  wizard_spectator_not_set: "<spleef_prefix> &cSpectator not set."
+  wizard_exit_not_set: "<spleef_prefix> &cExit not set."
+  wizard_minimum_not_set: "<spleef_prefix> &cMinimum not set."
+  wizard_maximum_not_set: "<spleef_prefix> &cMaximum not set."
+  wizard_arena_exists: "<spleef_prefix> This arena already exists, wizard cancelled."
+
+  # Modify arena messages
+  no_name: "<spleef_prefix> &cNo name was designated, please type the name before continuing."
+  arena_does_not_exist: "<spleef_prefix> &cThe arena with the name &d<arenaname> &cdoes not exist."
+  player_success_join: "<spleef_prefix> &aSuccessfully joined arena &d<arenaname>&a."
+  player_success_quit: "<spleef_prefix> &cYou have left arena &d<arenaname>&c."
+  player_join: "<spleef_prefix> &b<playername> &ahas joined the game!"
+  player_quit: "<spleef_prefix> &b<playername> &chas left the game."
+  player_died: "<spleef_prefix> <playername> has been eliminated."
+  player_winner: "<spleef_prefix> <playername> has won the game!!"
+  arena_need_disable: "<spleef_prefix> &cArena must be disabled to edit"
+  arena_not_enough_players: "<spleef_prefix> &cNot enough players have joined, currently on hold."
+  arena_no_winner: "<spleef_prefix> The match took too long, arena resetting."
+  arena_full: "<spleef_prefix> The arena is full, please try again later."
+  arena_in-game: "<spleef_prefix> The arena is already in progress, please try again later."
+  arena_is_disabled: "<spleef_prefix> The arena is disbaled, please try again later."
+  player_already_joined: "<spleef_prefix> You are already in this arena."
+  player_in_another_arena: "<spleef_prefix> &cYou are already in a different arena."
+  player_not_in_game: "<spleef_prefix> You are not in an arena."
+  starting_game: "<spleef_prefix> &bGame starting in &d<time>&b seconds."
+  game_start: "<spleef_prefix> &aGet ready for a swell battle, and &dBEGIN!!!"
+  vault_message: "<spleef_prefix> &a<money> has been added to your account."
+  arena_deleted: "<spleef_prefix> &cArena Deleted."
+  arena_disabled: "<spleef_prefix> &cArena disable."
+  arena_already_disabled: "<spleef_prefix> &bArena already disabled."
+  arena_enabled: "<spleef_prefix> &aArena enabled."
+  arena_already_enabled: "<spleef_prefix> &bArena already enabled."
+  wizard_already_in: "<spleef_prefix> &cAlready in wizard?"
+
+  # Create/Edit String prompt.
+  wizard_cmds:
+    - "&f&l------------------------"
+    - "<spleef_prefix> &eCreate/Edit Commands"
+    - "&cNote: you cannot chat with other players"
+    - ""
+    - "&fTo run a command, type in the chat either the following:"
+    - "&bset_spawn &d(sets the arena spawn to your location)"
+    - "&bset_lobby &d(sets the lobby to your location, optional)"
+    - "&bset_exit &d(sets the exit spawn to your location)"
+    - "&bset_spectate &d(spectators spawn to your location)"
+    - "&bset_name &d(Change name)"
+    - "&bset_min <number> &d(set mininum)"
+    - "&bset_max <number> &d(set maximum)"
+    - "&bexit_wizard &d(exit wizard)"
+    - "&bcomplete_wizard &d(complete wizard)"
+    - "&f&l------------------------"
+
+  # In-Game Items
+  gold_shovel: "&6&lSpleefer_Spade"
+  diamond_shovel: "&b&lSpleefer_Spade"
+  leave_item: "&c&lExit_Arena"
+  snowball: "&f&lFIRE_THEM_SNOWBALLS"
+
+  # Signs
+  sign_join:
+    - "<spleef_prefix>"
+    - "&f<arenaname>"
+    - "&3<in_game> &e/ &3<maximum>"
+    - "<status>"
+
+  sign_leave:
+    - "<spleef_prefix>"
+    - "&b[&9Leave&b]"
+    - ""
+    - ""
+
+  sign_status:
+    wait: "&a[Join]"
+    in-game: "&e[In-Progress]"
+    reset: "&c[RESETTING]"
+    disabled: "&e&l[&c&lDISABLED&e&l]"
+
+  sign_creation: "<spleef_prefix> &aSign created."
+  sign_deletion: "<spleef_prefix> &cSign removed."
+
+  # Stats messages
+  stats:
+    - "<spleef_prefix> <playername> &b&lStats"
+    - "&f---------------------------------"
+    - "Wins:   <wins>"
+    - "Losses: <losses>"
+
+  # Leaderboards
+  leaderboard_title: "<spleef_prefix>"
+  leaderboard_game:
+    - ""
+    - "&b<playerlist>"
+    - ""
+    - "&aTime&d: &c<currenttime>"
+    - "&cGippersWorld"
+
+  leaderboard_wait:
+    - ""
+    - "&aWaiting time&d: &c<currenttime>"
+    - "&aGippersWorld"
+
+  no_number_entry: "<spleef_prefix> No number entered, please try again."
+  no_player_entry: "<spleef_prefix> No player entered, please try again."
+  player_does_not_exist: "<spleef_prefix> That player did not play yet."
+  stat_set: "<spleef_prefix> Stat has been changed."
+
+  # Modify the command page here
+  commands_page_player:
+    - "&f&l------------------------"
+    - "<spleef_prefix> &cCommands:"
+    - "/spleef join <name>"
+    - "/spleef leave"
+    - "/spleef stats"
+  commands_page_admin:
+    - "&f&l------------------------"
+    - "<spleef_prefix> &cCommands:"
+    - "/spleef create <name>"
+    - "/spleef delete <name>"
+    - "/spleef delete <name>"
+    - "/spleef <setwins/setlosses> <name>"
+    - "/spleef join <name>"
+    - "/spleef leave"
+    - "/spleef stats"
+
+#BowSpleef specific messages.
+bowspleef:
+  prefix: "&e&l[&c&lBowSpleef&e&l]&r"
+
+  # Modify the wizard setup messages
+  no_name_wizard: "<bowspleef_prefix> &cNo name was designated, please type in a name to start the wizard."
+  in_wizard: "<bowspleef_prefix> &aYou are now in the setup wizard, to cancel, type '&cexit_wizard&a'."
+  exit_wizard: "<bowspleef_prefix> &cYou have canceled the wizard, all progress has been lost."
+  wizard_minimum_chat: "<bowspleef_prefix> &aType in chat the minimum players can be in the arena."
+  wizard_maximum_chat: "<bowspleef_prefix> &aType in chat the maximum players can be in the arena."
+  wizard_name_chat: "<bowspleef_prefix> &aType in chat the name you want to change it to."
+  wizard_minimum_set: "<bowspleef_prefix> &aMinimum Set to &e<minimum>&a."
+  wizard_maximum_set: "<bowspleef_prefix> &aMaximum Set to &e<maximum>&a."
+  wizard_name_set: "<bowspleef_prefix> &aNew name set to &e<arenaname>&a."
+  wizard_arena_saved: "<bowspleef_prefix> &aArena saved and completed, ready to go!"
+  wizard_no_number: "<bowspleef_prefix> &cNo number detected, try again."
+  wizard_min_not_accepted: "<bowspleef_prefix> &cMinimum number doesn't work, raise the max number or try again."
+  wizard_max_not_accepted: "<bowspleef_prefix> &cMaximum number doesn't work, raise the min number or try again."
+  wizard_arena_spawn_set: "<bowspleef_prefix> &aArena Spawn Set!"
+  wizard_lobby_spawn_set: "<bowspleef_prefix> &aLobby Spawn Set!"
+  wizard_spectator_spawn_set: "<bowspleef_prefix> &aSpectator Spawn Set!"
+  wizard_exit_spawn_set: "<bowspleef_prefix> &aExit Spawn Set!"
+  wizard_new_name_set: "<bowspleef_prefix> &aName Changed!"
+  wizard_name_cannot_set: "<bowspleef_prefix> &aArena name found with same name!"
+  wizard_arena_no_setup_exist: "<bowspleef_prefix> &cThis command does not exist for setup."
+  wizard_arena_not_set: "<bowspleef_prefix> &cArena spawn not set."
+  wizard_spectator_not_set: "<bowspleef_prefix> &cSpectator not set."
+  wizard_exit_not_set: "<bowspleef_prefix> &cExit not set."
+  wizard_minimum_not_set: "<bowspleef_prefix> &cMinimum not set."
+  wizard_maximum_not_set: "<bowspleef_prefix> &cMaximum not set."
+  wizard_arena_exists: "<bowspleef_prefix> This arena already exists, wizard cancelled."
+
+  # Modify arena messages
+  no_name: "<bowspleef_prefix> &cNo name was designated, please type the name before continuing."
+  arena_does_not_exist: "<bowspleef_prefix> &cThe arena with the name &d<arenaname> &cdoes not exist."
+  player_success_join: "<bowspleef_prefix> &aSuccessfully joined arena &d<arenaname>&a."
+  player_success_quit: "<bowspleef_prefix> &cYou have left arena &d<arenaname>&c."
+  player_join: "<bowspleef_prefix> &b<playername> &ahas joined the game!"
+  player_quit: "<bowspleef_prefix> &b<playername> &chas left the game."
+  player_died: "<bowspleef_prefix> <playername> has been eliminated."
+  player_winner: "<bowspleef_prefix> <playername> has won the game!!"
+  arena_need_disable: "<bowspleef_prefix> &cArena must be disabled to edit"
+  arena_not_enough_players: "<bowspleef_prefix> &cNot enough players have joined, currently on hold."
+  arena_no_winner: "<bowspleef_prefix> The match took too long, arena resetting."
+  arena_full: "<bowspleef_prefix> The arena is full, please try again later."
+  arena_in-game: "<bowspleef_prefix> The arena is already in progress, please try again later."
+  arena_is_disabled: "<bowspleef_prefix> The arena is disbaled, please try again later."
+  player_already_joined: "<bowspleef_prefix> You are already in this arena."
+  player_in_another_arena: "<bowspleef_prefix> &cYou are already in a different arena."
+  player_not_in_game: "<bowspleef_prefix> You are not in an arena."
+  starting_game: "<bowspleef_prefix> &bGame starting in &d<time>&b seconds."
+  game_start: "<bowspleef_prefix> &aGet ready for a swell battle, and &dBEGIN!!!"
+  vault_message: "<bowspleef_prefix> &a<money> has been added to your account."
+  arena_deleted: "<bowspleef_prefix> &cArena Deleted."
+  arena_disabled: "<bowspleef_prefix> &cArena disable."
+  arena_already_disabled: "<bowspleef_prefix> &bArena already disabled."
+  arena_enabled: "<bowspleef_prefix> &aArena enabled."
+  arena_already_enabled: "<bowspleef_prefix> &bArena already enabled."
+  wizard_already_in: "<bowspleef_prefix> &cAlready in wizard?"
+
+  # Create/Edit String prompt.
+  wizard_cmds:
+    - "&f&l------------------------"
+    - "<bowspleef_prefix> &eCreate/Edit Commands"
+    - "&cNote: you cannot chat with other players"
+    - ""
+    - "&fTo run a command, type in the chat either the following:"
+    - "&bset_spawn &d(sets the arena spawn to your location)"
+    - "&bset_lobby &d(sets the lobby to your location, optional)"
+    - "&bset_exit &d(sets the exit spawn to your location)"
+    - "&bset_spectate &d(spectators spawn to your location)"
+    - "&bset_name &d(Change name)"
+    - "&bset_min <number> &d(set mininum)"
+    - "&bset_max <number> &d(set maximum)"
+    - "&bexit_wizard &d(exit wizard)"
+    - "&bcomplete_wizard &d(complete wizard)"
+    - "&f&l------------------------"
+
+  # In-Game Items
+  bow: "&c&lMagic_Bow"
+  arrow: "&fArrow"
+  leave_item: "&c&lExit_Arena"
+
+  # Signs
+  sign_join:
+    - "<bowspleef_prefix>"
+    - "&f<arenaname>"
+    - "&3<in_game> &e/ &3<maximum>"
+    - "<status>"
+
+  sign_leave:
+    - "<bowspleef_prefix>"
+    - "&b[&9Leave&b]"
+    - ""
+    - ""
+
+  sign_status:
+    wait: "&a[Join]"
+    in-game: "&e[In-Progress]"
+    reset: "&c[RESETTING]"
+    disabled: "&e&l[&c&lDISABLED&e&l]"
+
+  sign_creation: "<bowspleef_prefix> &aSign created."
+  sign_deletion: "<bowspleef_prefix> &cSign removed."
+
+  # Stats messages
+  stats:
+    - "<bowspleef_prefix> <playername> &b&lStats"
+    - "&f---------------------------------"
+    - "Wins:   <wins>"
+    - "Losses: <losses>"
+
+  # Leaderboards
+  leaderboard_title: "<bowspleef_prefix>"
+  leaderboard_game:
+    - ""
+    - "&b<playerlist>"
+    - ""
+    - "&aTime&d: &c<currenttime>"
+    - "&cGippersWorld"
+
+  leaderboard_wait:
+    - ""
+    - "&aWaiting time&d: &c<currenttime>"
+    - "&aGippersWorld"
+
+  no_number_entry: "<bowspleef_prefix> No number entered, please try again."
+  no_player_entry: "<bowspleef_prefix> No player entered, please try again."
+  player_does_not_exist: "<bowspleef_prefix> That player did not play yet."
+  stat_set: "<bowspleef_prefix> Stat has been changed."
+
+  # Modify the command page here
+  commands_page_player:
+    - "&f&l------------------------"
+    - "<bowspleef_prefix> &cCommands:"
+    - "/bowspleef join <name>"
+    - "/bowspleef leave"
+    - "/bowspleef stats"
+  commands_page_admin:
+    - "&f&l------------------------"
+    - "<bowspleef_prefix> &cCommands:"
+    - "/bowspleef create <name>"
+    - "/bowspleef delete <name>"
+    - "/bowspleef delete <name>"
+    - "/bowspleef <setwins/setlosses> <name>"
+    - "/bowspleef join <name>"
+    - "/bowspleef leave"
+    - "/bowspleef stats"
+
+# BuildIt specific messages.
+buildit:
+  # Main prefixes
+  prefix: "&3[&bBuildIt&e]"
+  chat_prefix: "&e[&bBuild&6It&e]"
+
+  # Set the game chat message
+  in_game_chat: "<buildit_chatprefix> &b<player>&d: &f<message>"
+
+  # Modify the wizard setup messages
+  no_name_wizard: "<buildit_prefix> &cNo name was designated, please type in a name to start the wizard."
+  in_wizard: "<buildit_prefix> &aYou are now in the setup wizard, to cancel, click on the barrier."
+  exit_wizard: "<buildit_prefix> &cYou have canceled the wizard, all progress has been lost."
+  wizard_minimum_chat: "<buildit_prefix> &aType in chat the minimum players can be in the arena."
+  wizard_maximum_chat: "<buildit_prefix> &aType in chat the maximum players can be in the arena."
+  wizard_name_chat: "<buildit_prefix> &aType in chat the name you want to change it to."
+  wizard_minimum_set: "<buildit_prefix> &aMinimum Set to &e<minimum>&a."
+  wizard_maximum_set: "<buildit_prefix> &aMaximum Set to &e<maximum>&a."
+  wizard_name_set: "<buildit_prefix> &aNew name set to &e<arenaname>&a."
+  wizard_arena_saved: "<buildit_prefix> &aArena saved and completed, ready to go!"
+  wizard_builder_spawn_set: "<buildit_prefix> &aBuilder Spawn Set!"
+  wizard_lobby_spawn_set: "<buildit_prefix> &aLobby Spawn Set!"
+  wizard_spectator_spawn_set: "<buildit_prefix> &aSpectator Spawn Set!"
+  wizard_builder_not_set: "<buildit_prefix> &cArena not set."
+  wizard_exit_spawn_set: "<buildit_prefix> &aExit Spawn Set!"
+  wizard_spectator_not_set: "<buildit_prefix> &cSpectator not set."
+  wizard_minimum_not_set: "<buildit_prefix> &cMinimum not set."
+  wizard_maximum_not_set: "<buildit_prefix> &cMaximum not set."
+  wizard_exit_not_set: "<buildit_prefix> &cExit not set."
+  wizard_arena_exists: "<buildit_prefix> This arena already exists, wizard cancelled."
+  wizard_already_in: "<buildit_prefix> &cAlready in wizard?"
+
+  # Modify arena messages, some will have working placeholders, some will not.
+  no_name: "<buildit_prefix> &cNo name was designated, please type the name before continuing."
+  arena_does_not_exist: "<buildit_prefix> &cThe arena with the name &d<arenaname> &cdoes not exist."
+  player_success_join: "<buildit_prefix> &aSuccessfully joined arena &d<arenaname>&a."
+  player_success_quit: "<buildit_prefix> &cYou have left arena &d<arenaname>&c."
+  player_join: "<buildit_prefix> &b<playername> &ahas joined the game!"
+  player_quit: "<buildit_prefix> &b<playername> &chas left the game."
+  player_winners: "<buildit_prefix> Congrats to everyone on their skills, rewards are coming soon to the top three!!"
+  arena_not_enough_players: "<buildit_prefix> &cNot enough players have joined, currently on hold."
+  arena_full: "<buildit_prefix> The arena is full, please try again later."
+  arena_in-game: "<buildit_prefix> The arena is already in progress, please try again later."
+  arena_is_disabled: "<buildit_prefix> The arena is disbaled, please try again later."
+  player_already_joined: "<buildit_prefix> You are already in this arena."
+  player_in_another_arena: "<buildit_prefix> &cYou are already in a different arena."
+  player_not_in_game: "<buildit_prefix> You are not in an arena."
+  starting_game: "<buildit_prefix> &bGame starting in &d<time>&b seconds."
+  starting_build_time: "<buildit_prefix> &bBuilding round starting in &d<time> &bsecond(s)."
+  now_building: "<buildit_prefix> &bBuilding for this round is&a: &e<builder>&d."
+  build_start: "<buildit_prefix> &bNow what are you doing standing there, &aBUILD!!"
+  builder_prevent_chat: "<buildit_prefix> &cYou are not allowed to talk while building."
+  build_time_left: "<buildit_prefix> &bYou only have &d<time> &bsecond(s) left until the round is over."
+  builder_show_word: "<buildit_prefix> &bYou must build the word: &f<word>&d."
+  builder_left: "<buildit_prefix> &cBuilder left, moving along to the next round, the word was &d<word>&c."
+  builder_cheat_notify: "<buildit_prefix> Someone thinks that the builder is cheating."
+  builder_kicked: "<buildit_prefix> The builder has been kicked for the round."
+  already_got_word: "<buildit_prefix> &cYou already got the word?"
+  got_word_correct: "<buildit_prefix> <playername> got it, &d<points>&b point(s) added to their score!"
+  cannot_place_block: "<buildit_prefix> &cYou cannot place this block."
+  show_word: "<buildit_prefix> &dTimes up, the word was: &f<word>."
+  everyone_got_it: "<buildit_prefix> &dEveryone got it, moving forward."
+  vault_message: "<buildit_prefix> &a$<money> has been added to your account."
+  arena_deleted: "<buildit_prefix> &cArena Deleted."
+  arena_disabled: "<buildit_prefix> &cArena disable."
+  arena_already_disabled: "<buildit_prefix> &bArena already disabled."
+  arena_enabled: "<buildit_prefix> &aArena enabled."
+  arena_already_enabled: "<buildit_prefix> &bArena already enabled."
+
+  # Create/Edit String prompt.
+  wizard_cmds:
+    - "&f&l------------------------"
+    - "<buildit_prefix> &eCreate/Edit Commands"
+    - "&cNote: you cannot chat with other players"
+    - ""
+    - "&fTo run a command, type in the chat either the following:"
+    - "&bset_builder &d(sets the builder area to your location)"
+    - "&bset_lobby &d(sets the lobby to your location, optional)"
+    - "&bset_exit &d(sets the exit spawn to your location)"
+    - "&bset_spectate &d(sets the spectators spawn to your location)"
+    - "&bset_name &d(Change name)"
+    - "&bset_min <number> &d(set mininum)"
+    - "&bset_max <number> &d(set maximum)"
+    - "&bexit_wizard &d(exit wizard)"
+    - "&bcomplete_wizard &d(complete wizard)"
+    - "&f&l------------------------"
+
+
+  # In-Game Items
+  leave_item: "&c&lExit_Arena"
+
+  # Signs
+  sign_join:
+    - "<buildit_prefix>"
+    - "&f<arenaname>"
+    - "&3<in_game> &e/ &3<maximum>"
+    - "<status>"
+
+  sign_leave:
+    - "<buildit_prefix>"
+    - "&b[&9Leave&b]"
+    - ""
+    - ""
+
+  sign_status:
+    wait: "&a[Join]"
+    in-game: "&e[In-Progress]"
+    reset: "&c[RESETTING]"
+    disabled: "&e&l[&c&lDISABLED&e&l]"
+
+  sign_creation: "<buildit_prefix> &aSign created."
+  sign_deletion: "<buildit_prefix> &cSign removed."
+
+  # Leaderboards
+  leaderboard_title: "<buildit_prefix>"
+
+  leaderboard_game:
+    - "&b<playerlist>"
+    - ""
+    - "&dRound <round>"
+    - "&aTime&d: &c<currenttime>"
+
+  leaderboard_wait:
+    - ""
+    - "&aWaiting time&d: &c<currenttime>"
+    - "&aGippersWorld"
+
+  # Stats messages
+  stats:
+    - "<buildit_prefix> <playername> &b&lStats"
+    - "&f---------------------------------"
+    - "First:   <wins>"
+    - "Second:  <losses>"
+    - "Third:   <losses>"
+
+  no_number_entry: "<buildit_prefix> No number entered, please try again."
+  no_player_entry: "<buildit_prefix> No player entered, please try again."
+  player_does_not_exist: "<buildit_prefix> That player did not play yet."
+  stat_set: "<buildit_prefix> Stat has been changed."
+
+  # Action bar message to remind players of the word
+  action_bar: "&dWord: &f<word>"
+
+  # Modify the command page here
+  commands_page_player:
+    - "&f&l------------------------"
+    - "<buildit_prefix> &cCommands:"
+    - "/buildit join <name>"
+    - "/buildit leave"
+    - "/buildit stats"
+  commands_page_admin:
+    - "&f&l------------------------"
+    - "<buildit_prefix> &cCommands:"
+    - "/buildit create <name>"
+    - "/buildit delete <name>"
+    - "/buildit join <name>"
+    - "/buildit leave"
+    - "/buildit stats"
+

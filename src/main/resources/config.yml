@@ -1,0 +1,167 @@
+# Default Config.yml
+
+# All commands must make sure the player is in the correct world to teleport them.
+whitelisted_worlds:
+  - "world"
+  - "world-nether"
+  - "world-end"
+
+# Spleef section.
+spleef:
+  # The main game settings (this goes for all arenas):
+  waiting_time: 3
+  total_game_time: 10
+  scoreboard_enable: true
+  names_on_board_max: 5
+  exp_time_enable: true
+  give_snowballs_on_start:
+    enable: true
+    gold_shovel_amount: 10
+    diamond_shovel_amount: 16
+
+  # If it hits a certain time, an event will happen in seconds.
+  # Info on what you can do:
+  # snowballs: give the player a certain amount of snowballs.
+  # speed: make them go very fast for a duration of time (in seconds)
+  # slow: Slow them down a little bit of time (in seconds).
+  # jump: Make them jump a little higher for a duration of time (in seconds)
+  # tntfall: Make tnt rain upon the players for a duration in seconds
+
+  # Amplification (amp) is only for potion effects.
+  # If you want to make it random, give a percentage that each player will get it.
+  # If you don't want it to be random, just remove the random line.
+  # NOTE: random only works for that time interval.
+  enable_time_events: true
+  time_events:
+    100:
+      tntfall: 5
+      message: "<prefix> &cMAY IT RAIN TNT"
+    90:
+      jump: 8
+      jump_amp: 8
+      random: 75
+    60:
+      snowballs: 20
+    45:
+      slow: 3
+      slow_amp: 5
+      random: 50
+    30:
+      snowballs: 30
+    10:
+      tntfall: 2
+      message: "<prefix> &cMAY IT RAIN TNT"
+    5:
+      speed: 4
+      speed_amp: 5
+
+  # Winner rewards
+  vault_reward: 100
+  commands:
+    - "give <player> diamond 1"
+
+  # Blocks given to players (Not the display name, but the actual block).
+  setup_wizard_blocks:
+    cancel: "barrier"
+    maximum: "magenta_wool"
+    minimum: "lime_wool"
+    spectator: "white_wool"
+    exit: "cyan_wool"
+    lobby: "red_wool"
+    arena: "light_blue_wool"
+    complete: "sunflower"
+  in_lobby:
+    leave: "barrier"
+
+# BowSpleef section.
+bowspleef:
+  # The main game settings (this goes for all arenas):
+  waiting_time: 3
+  total_game_time: 10
+  scoreboard_enable: true
+  names_on_board_max: 5
+  exp_time_enable: true
+
+  # Floor block used for arrows to make contact:
+  floor_block: "red_wool"
+
+  # If it hits a certain time, an event will happen in seconds.
+  # Info on what you can do:
+  # speed: make them go very fast for a duration of time (in seconds)
+  # slow: Slow them down a little bit of time (in seconds).
+  # jump: Make them jump a little higher for a duration of time (in seconds)
+  # tntfall: Make tnt rain upon the players for a duration in seconds
+
+  # Amplification (amp) is only for potion effects.
+  # If you want to make it random, give a percentage that each player will get it.
+  # If you don't want it to be random, just remove the random line.
+  # NOTE: random only works for that time interval.
+  enable_time_events: true
+  time_events:
+    100:
+      tntfall: 5
+      message: "<prefix> &cMAY IT RAIN TNT"
+    90:
+      jump: 8
+      jump_amp: 8
+      random: 75
+    45:
+      slow: 3
+      slow_amp: 5
+      random: 50
+    10:
+      tntfall: 2
+      message: "<prefix> &cMAY IT RAIN TNT"
+    5:
+      speed: 4
+      speed_amp: 5
+
+  # Winner rewards
+  vault_reward: 100
+  commands:
+    - "give <player> diamond 1"
+
+  # Blocks given to players (Not the display name, but the actual block).
+  in_lobby:
+    leave: "barrier"
+
+# BuildIt section
+buildit:
+  # The time settings (this goes for all arenas):
+  # Note: Cut build time means if the first player gets it, time is cut.
+  # If you want to remove it, just type zero on it.
+  exp_time_enable: true
+  waiting_time: 5
+  build_time: 25
+  cut_build_time: 5
+  show_word_to_builder: 5
+  show_everyone_word_after_build: 5
+
+  # Game regulations
+  # first_player and regular_points are for players who get it first
+  # then if a player already gets it first, it just gives them the regular
+  # points, if you want it disabled, just type 0.
+  # out_of_range is just if the builder goes too far out of range from the builders spawn.
+  names_on_board_max: 5
+  out_of_range: 50
+  game_rounds: 2
+  first_player: 3
+  regular_points: 1
+
+  # If you want rewards enabled
+  enable_winner_rewards: true
+
+  # Winner rewards
+  vault_reward: 100
+  commands:
+    - "give <player> diamond 1"
+
+  # Blocks given to players (Not the display name, but the actual block).
+  in_lobby:
+    leave: "barrier"
+  banned_blocks:
+    - water
+    - lava
+    - tnt
+    - piston
+    - sticky_piston
