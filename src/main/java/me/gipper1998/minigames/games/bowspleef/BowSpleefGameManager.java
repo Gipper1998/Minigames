@@ -151,29 +151,30 @@ public class BowSpleefGameManager extends BukkitRunnable implements Listener
         }
 
         // Scoreboard section.
-        if (this.scoreboardEnabled()) {
-            if (!this.scoreCreated)
+        if (scoreboardEnabled())
+        {
+            if (!scoreCreated)
             {
-                this.scoreboard = new ScoreboardBuilder("bowspleef-" + this.arena.getName());
-                this.scoreCreated = true;
+                scoreboard = new ScoreboardBuilder("bowspleef-" + arena.getName());
+                scoreCreated = true;
             }
 
-            this.updateScoreboard();
+            updateScoreboard();
         }
 
         // TNT.
-        if (this.tntEnabled)
+        if (tntEnabled)
         {
-            if (this.tntTime <= 0)
+            if (tntTime <= 0)
             {
-                this.tntEnabled = false;
+                tntEnabled = false;
             }
 
             for(Player p : totalPlayers)
             {
-                if (this.rand.nextBoolean())
+                if (rand.nextBoolean())
                 {
-                    TNTBuilder.getInstance().create(p.getLocation(), this.TNT);
+                    TNTBuilder.getInstance().create(p.getLocation(), TNT);
                 }
             }
 
@@ -431,18 +432,17 @@ public class BowSpleefGameManager extends BukkitRunnable implements Listener
 
         // Rewards via commands.
         List<String> rewardCommands = ConfigManager.getInstance().getStringList("bowspleef.commands");
-        ConsoleCommandSender console = Minigames.getInstance().getServer().getConsoleSender();
-        DatabaseManager.getInstance().addWin(winner.getUniqueId(), "bowspleef");
-        Iterator var9 = rewardCommands.iterator();
-        if (!rewardCommands.isEmpty()) {
-            while(var9.hasNext()) {
-                String command = (String)var9.next();
-                command = command.replace("<player>", this.winner.getName());
-                ServerCommandEvent commandEvent = new ServerCommandEvent(console, command);
-                Minigames.getInstance().getServer().getPluginManager().callEvent(commandEvent);
-                Minigames.getInstance().getServer().getScheduler().callSyncMethod(Minigames.getInstance(), () -> {
-                    return Minigames.getInstance().getServer().dispatchCommand(commandEvent.getSender(), commandEvent.getCommand());
-                });
+        for (String command : rewardCommands)
+        {
+            try
+            {
+                command = command.replaceAll("<player>", winner.getName());
+                ConsoleCommandSender console = Minigames.getInstance().getServer().getConsoleSender();
+                Minigames.getInstance().getServer().dispatchCommand(console, command);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
             }
         }
 

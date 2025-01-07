@@ -177,9 +177,9 @@ public class BowSpleefSignManager implements Listener
     public void onSignPlacement(SignChangeEvent event)
     {
         // Check if they have perms before even continuing.
-        if (event.getPlayer().hasPermission("bowspleef.admin"))
+        if (event.getPlayer().hasPermission("minigames.admin"))
         {
-            if (event.getLine(0).equals("[Spleef]"))
+            if (event.getLine(0).equals("[BowSpleef]"))
             {
                 if (event.getLine(1) != null && BowSpleefArenaManager.getInstance().findArena(event.getLine(1)) != null)
                 {
@@ -197,7 +197,7 @@ public class BowSpleefSignManager implements Listener
                         }
                         listedSigns.add(type + ";" + event.getBlock().getX() + ";" + event.getBlock().getY() + ";" + event.getBlock().getZ() + ";" + event.getBlock().getWorld().getName());
                         signs.getConfig().set("Signs." + key, listedSigns);
-                        MessageManager.getInstance().sendMessage("sign_creation", event.getPlayer());
+                        MessageManager.getInstance().sendMessage("bowspleef.sign_creation", event.getPlayer());
                         for (int i = 0; i < 4; i++)
                         {
                             event.setLine(i, "");
@@ -247,7 +247,7 @@ public class BowSpleefSignManager implements Listener
                                         listedSigns.remove(i);
                                         signs.getConfig().set("Signs." + arenaName, listedSigns);
                                         signs.saveConfig();
-                                        MessageManager.getInstance().sendMessage("sign_deletion", event.getPlayer());
+                                        MessageManager.getInstance().sendMessage("bowspleef.sign_deletion", event.getPlayer());
                                         return;
                                     }
                                     else

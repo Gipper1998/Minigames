@@ -244,6 +244,7 @@ public class MessageManager {
     {
         List<String> messageList = messages.getConfig().getStringList(path);
 
+
         if (messageList.isEmpty())
         {
             return null;
@@ -251,7 +252,7 @@ public class MessageManager {
         else
         {
             List<String> temp = new ArrayList();
-            for (String line : temp)
+            for (String line : messageList)
             {
                 if (line.contains("<playerlist>"))
                 {

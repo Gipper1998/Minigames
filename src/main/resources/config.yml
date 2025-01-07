@@ -58,7 +58,8 @@ spleef:
   # Winner rewards
   vault_reward: 100
   commands:
-    - "give <player> diamond 1"
+    - "say Hello, world!"
+    - "give <player> minecraft:diamond 1"
 
   # Blocks given to players (Not the display name, but the actual block).
   setup_wizard_blocks:
@@ -119,7 +120,8 @@ bowspleef:
   # Winner rewards
   vault_reward: 100
   commands:
-    - "give <player> diamond 1"
+    - "give <player> minecraft:diamond 1"
+    - "say Congratulations, <player>!"
 
   # Blocks given to players (Not the display name, but the actual block).
   in_lobby:

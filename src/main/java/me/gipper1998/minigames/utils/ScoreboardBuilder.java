@@ -44,19 +44,18 @@ public class ScoreboardBuilder
 
         for (String line : entries)
         {
-            scoreboard.resetScores(line);
+            objective.getScore(line).resetScore();
         }
+
     }
 
     // Set lines for scoreboard.
     public void setLines(List<String> messages)
     {
         clearScoreboard();
-        int index = messages.size() - 1;
+        int index = messages.size();
 
-        Set<String> lines = new HashSet<>(messages);
-
-        for(String line : lines)
+        for(String line : messages)
         {
             objective.getScore(line).setScore(index);
             index--;

@@ -90,10 +90,10 @@ public class DatabaseManager {
                     "\n    tntrun_wins INTEGER NOT NULL DEFAULT 0," +
                     "\n    tntrun_losses INTEGER NOT NULL DEFAULT 0," +
                     "\n    blockparty_wins INTEGER NOT NULL DEFAULT 0," +
-                    "\n    blockparty_losses INTEGER NOT NULL DEFAULT 0)" +
+                    "\n    blockparty_losses INTEGER NOT NULL DEFAULT 0," +
                     "\n    buildit_first INTEGER NOT NULL DEFAULT 0," +
                     "\n    buildit_second INTEGER NOT NULL DEFAULT 0," +
-                    "\n    buildit_third INTEGER NOT NULL DEFAULT 0," +
+                    "\n    buildit_third INTEGER NOT NULL DEFAULT 0)" +
                     "\n");
             stmt.close();
         }

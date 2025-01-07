@@ -165,33 +165,34 @@ public class SpleefGameManager extends BukkitRunnable implements Listener
         }
 
         // Scoreboard section.
-        if (this.scoreboardEnabled()) {
-            if (!this.scoreCreated)
+        if (scoreboardEnabled()) {
+
+            if (!scoreCreated)
             {
-                this.scoreboard = new ScoreboardBuilder("spleef-" + this.arena.getName());
-                this.scoreCreated = true;
+                scoreboard = new ScoreboardBuilder("spleef-" + arena.getName());
+                scoreCreated = true;
             }
 
             this.updateScoreboard();
         }
 
         // TNT.
-        if (this.tntEnabled)
+        if (tntEnabled)
         {
-            if (this.tntTime <= 0)
+            if (tntTime <= 0)
             {
-                this.tntEnabled = false;
+                tntEnabled = false;
             }
 
             for(Player p : totalPlayers)
             {
-                if (this.rand.nextBoolean())
+                if (rand.nextBoolean())
                 {
-                    TNTBuilder.getInstance().create(p.getLocation(), this.TNT);
+                    TNTBuilder.getInstance().create(p.getLocation(), TNT);
                 }
             }
 
-            --this.tntTime;
+            --tntTime;
         }
 
         // Switch for functions.
@@ -366,7 +367,6 @@ public class SpleefGameManager extends BukkitRunnable implements Listener
     // Reset the arena.
     private void resetArena()
     {
-
         // Get all the blocks broken back into place.
         blocksBroken.forEach((location) -> {
             location.getBlock().setType(Material.SNOW_BLOCK);
@@ -466,18 +466,18 @@ public class SpleefGameManager extends BukkitRunnable implements Listener
 
         // Rewards via commands.
         List<String> rewardCommands = ConfigManager.getInstance().getStringList("spleef.commands");
-        ConsoleCommandSender console = Minigames.getInstance().getServer().getConsoleSender();
-        DatabaseManager.getInstance().addWin(winner.getUniqueId(), "spleef");
-        Iterator var9 = rewardCommands.iterator();
-        if (!rewardCommands.isEmpty()) {
-            while(var9.hasNext()) {
-                String command = (String)var9.next();
-                command = command.replace("<player>", this.winner.getName());
-                ServerCommandEvent commandEvent = new ServerCommandEvent(console, command);
-                Minigames.getInstance().getServer().getPluginManager().callEvent(commandEvent);
-                Minigames.getInstance().getServer().getScheduler().callSyncMethod(Minigames.getInstance(), () -> {
-                    return Minigames.getInstance().getServer().dispatchCommand(commandEvent.getSender(), commandEvent.getCommand());
-                });
+
+        for (String command : rewardCommands)
+        {
+            try
+            {
+                command = command.replaceAll("<player>", winner.getName());
+                ConsoleCommandSender console = Minigames.getInstance().getServer().getConsoleSender();
+                Minigames.getInstance().getServer().dispatchCommand(console, command);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
             }
         }
 
@@ -796,6 +796,11 @@ public class SpleefGameManager extends BukkitRunnable implements Listener
             // Check the name, if equal, destroy only snow blocks.
             if (event.getEntity().getCustomName().equals(TNT))
             {
+                if (status != SpleefGameStatus.GAME)
+                {
+                    event.setCancelled(true);
+                }
+
                 Iterator<Block> inter = event.blockList().iterator();
                 while (inter.hasNext())
                 {

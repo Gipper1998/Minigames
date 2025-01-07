@@ -177,14 +177,14 @@ public class SpleefSignManager implements Listener
     public void onSignPlacement(SignChangeEvent event)
     {
         // Check if they have perms before even continuing.
-        if (event.getPlayer().hasPermission("spleef.admin"))
+        if (event.getPlayer().hasPermission("minigames.admin"))
         {
             if (event.getLine(0).equals("[Spleef]"))
             {
                 if (event.getLine(1) != null && SpleefArenaManager.getInstance().findArena(event.getLine(1)) != null)
                 {
                     // After all the checks, place it in file.
-                    if (event.getLine(3).equalsIgnoreCase("[leave]") || event.getLine(3).equalsIgnoreCase("[join]") || event.getLine(3).equalsIgnoreCase("[cheat]"))
+                    if (event.getLine(3).equalsIgnoreCase("[leave]") || event.getLine(3).equalsIgnoreCase("[join]"))
                     {
                         String type = event.getLine(3).toUpperCase();
                         type = type.replaceAll("[\\[\\](){}]","");
@@ -197,7 +197,7 @@ public class SpleefSignManager implements Listener
                         }
                         listedSigns.add(type + ";" + event.getBlock().getX() + ";" + event.getBlock().getY() + ";" + event.getBlock().getZ() + ";" + event.getBlock().getWorld().getName());
                         signs.getConfig().set("Signs." + key, listedSigns);
-                        MessageManager.getInstance().sendMessage("sign_creation", event.getPlayer());
+                        MessageManager.getInstance().sendMessage("spleef.sign_creation", event.getPlayer());
                         for (int i = 0; i < 4; i++)
                         {
                             event.setLine(i, "");
@@ -247,7 +247,7 @@ public class SpleefSignManager implements Listener
                                         listedSigns.remove(i);
                                         signs.getConfig().set("Signs." + arenaName, listedSigns);
                                         signs.saveConfig();
-                                        MessageManager.getInstance().sendMessage("sign_deletion", event.getPlayer());
+                                        MessageManager.getInstance().sendMessage("spleef.sign_deletion", event.getPlayer());
                                         return;
                                     }
                                     else
@@ -304,6 +304,10 @@ public class SpleefSignManager implements Listener
                                 {
                                     if ((block.getX() == x) && (block.getY() == y) && (block.getZ() == z) && world.getName().equals(block.getWorld().getName()))
                                     {
+
+                                        // Prevent editing the sign.
+                                        event.setCancelled(true);
+
                                         if (type.equalsIgnoreCase("join"))
                                         {
                                             if (!gm.getTotalPlayers().contains(p))
